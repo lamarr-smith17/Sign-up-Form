@@ -5,10 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Sign-Up Form</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./stylesheets/styles.css">
     <script src="./script.js"></script>
 </head>
 <body>
-    <h1>Coffee</h1>
+    <div class="main-container">
+        <div class="container-1">
+            <p>This is not a real online service! I am just an avid enjoyer of coffee, so I tend to make alot of my projects coffee-related!
+                Go ahead and test out this sign-up form!
+            </p>
+            <p>
+                Please, go on and test!
+            </p>
+            <div class="container-2">
+                <form method="post">
+                    <caption>Get Started!</caption>
+                    <div class="names">
+                        <ul id="names-list">
+                            <li>
+                                <label for="first-name">
+                                    <p>First Name</p>
+                                    <input type="text" name="fName" id="first-name" required placeholder="John">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="last-name">
+                                    <p>Last Name</p>
+                                    <input type="text" name="lName" id="last-name" required placeholder="Doe">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="email-number">
+                        <ul id="email-num">
+                            <li>
+                                <label for="mail">
+                                    <p>Email Address</p>
+                                    <input type="email" name="email" id="mail" required placeholder="johndoe123@youremail.com">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="telNum">
+                                    <p>Phone Number</p>
+                                    <input type="tel" name="phoneNum" id="telNum" placeholder="Optional">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="password">
+                        <ul id="password-id">
+                            <li>
+                                <label for="password">
+                                    <p>Password</p>
+                                   <input type="password" name="pWord" id="password" required>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="confirm-password">
+                                    <p>Confirm Password</p>
+                                    <input type="password" name="pWord" id="confirm-password" required>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="make-acc">
+                        <button type="submit">Create Coffee-Greatness</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <section id="image-container">
+            <div class="coffee-bar">
+                <img src="./imgs/cutecoffee.gif" alt="Cute GIF of coffee!" id="coffee-gif">
+                <p>Cafe La Coffee</p>
+            </div>
+            <img src="./imgs/nathan-dumlao-zUNs99PGDg0-unsplash.jpg" alt="Three beautiful cups of coffee!" id="coffee-img">
+        </section>
+    </div>    
+
 </body>
 </html>
