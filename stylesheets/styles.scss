@@ -9,6 +9,44 @@
     display: flex;
     gap: 100px;
 }
+@mixin spacingLeftTop {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+@mixin buttonBorder {
+    border: 1px solid  #C0C0C0;
+    border-radius: 30px;
+}
+@mixin inputInvalid {
+    outline: 2px solid  #FF0000;    
+}
+@mixin inputValid {
+    outline: 2px solid #3dce00;
+}
+@mixin inputInvalidAfterLeft {
+    position: absolute;
+    content: '✖';
+    right: 690px;
+    color: #FF0000;
+}
+@mixin inputValidAfterLeft {
+    position: absolute;
+    content: '✓';
+    right: 690px;
+    color: #3dce00;
+}
+@mixin inputInvalidAfterRight {
+    position: absolute;
+    content: '✖';
+    left: 710px;
+    color: #FF0000;
+}
+@mixin inputValidAfterRight {
+    position: absolute;
+    content: '✓';
+    left: 710px;
+    color: #3dce00;
+}
 body {
     height: 100vh;
     overflow: hidden;
@@ -30,10 +68,9 @@ form {
     left: 20px;
     top: 20px;
     input {
+        @include buttonBorder();
         width: 300px;
         height: 40px;
-        border: 1px solid  #C0C0C0;
-        border-radius: 30px;
         text-indent: 10px;
         font-size: 1rem;
     }
@@ -70,12 +107,15 @@ div {
         gap: 20px;
         background-color: #F3E5AB;
         width: 100%;
-        font-size: 2rem;
+        font-size: 1.25rem;
     } 
+    &.head-text {
+        @include spacingLeftTop();
+    }
     &.container-2{
-        background-color: #FFE8D6;
+        background-color: #f8edeb;
         font-size: 1.5rem;
-        height: 55%;
+        height: 60%;
     }
     &.coffee-bar{
         background-color: rgba(0,0,0, 0.2);
@@ -94,9 +134,13 @@ div {
     &.make-acc {
         top: 20px;
     }
+    &.returning-customer {
+        @include spacingLeftTop();  
+    }
 }
 button {
     &#join-btn{
+        @include buttonBorder();
         width: 250px;
         height: fit-content;
         font-size: 2rem;
@@ -110,7 +154,58 @@ img {
         height: 100%;
     }
     &#coffee-gif {
-        width: 400px;
+        max-width: auto;
         height: 300px;
     }
+}
+
+input {
+    &:focus:valid{
+        @include inputValid();
+    }
+    &:focus:invalid{
+        @include inputInvalid();
+    }
+    &#first-name {
+        &:focus:invalid+span::after{
+            @include inputInvalidAfterLeft();
+        }
+        &:focus:valid+span::after{
+            @include inputValidAfterLeft();
+        }
+    }
+    &#last-name{
+        &:focus:invalid+span::after{
+            @include inputInvalidAfterRight();
+        }
+        &:focus:valid+span::after{
+            @include inputValidAfterRight();
+        }
+    }
+    &#mail{
+        &:focus:invalid{
+            @include inputInvalid();
+        }
+        &:focus:invalid+span::after{
+            @include inputInvalidAfterLeft();
+        }
+        &:focus:valid+span::after {
+            @include inputValidAfterLeft();
+        }
+    }
+    &#telNum{
+        &:focus{
+            outline: 2px solid #fca311;
+        }
+        &:focus:invalid{
+            @include inputInvalid();
+        }
+        &:focus:invalid+span::after{
+            @include inputInvalidAfterRight();
+        }
+        &:focus:valid+span::after {
+            @include inputValidAfterRight();
+        }
+    }
+    
 }

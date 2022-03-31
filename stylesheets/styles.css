@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -25,10 +26,10 @@ form {
   top: 20px;
 }
 form input {
-  width: 300px;
-  height: 40px;
   border: 1px solid #C0C0C0;
   border-radius: 30px;
+  width: 300px;
+  height: 40px;
   text-indent: 10px;
   font-size: 1rem;
 }
@@ -64,12 +65,16 @@ div.container-1 {
   gap: 20px;
   background-color: #F3E5AB;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.25rem;
+}
+div.head-text {
+  margin-top: 20px;
+  margin-left: 20px;
 }
 div.container-2 {
-  background-color: #FFE8D6;
+  background-color: #f8edeb;
   font-size: 1.5rem;
-  height: 55%;
+  height: 60%;
 }
 div.coffee-bar {
   background-color: rgba(0, 0, 0, 0.2);
@@ -88,8 +93,14 @@ div.coffee-bar > p {
 div.make-acc {
   top: 20px;
 }
+div.returning-customer {
+  margin-top: 20px;
+  margin-left: 20px;
+}
 
 button#join-btn {
+  border: 1px solid #C0C0C0;
+  border-radius: 30px;
   width: 250px;
   height: fit-content;
   font-size: 2rem;
@@ -100,8 +111,72 @@ img#coffee-img {
   height: 100%;
 }
 img#coffee-gif {
-  width: 400px;
+  max-width: auto;
   height: 300px;
+}
+
+input:focus:valid {
+  outline: 2px solid #3dce00;
+}
+input:focus:invalid {
+  outline: 2px solid #FF0000;
+}
+input#first-name:focus:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  right: 690px;
+  color: #FF0000;
+}
+input#first-name:focus:valid + span::after {
+  position: absolute;
+  content: "✓";
+  right: 690px;
+  color: #3dce00;
+}
+input#last-name:focus:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  left: 710px;
+  color: #FF0000;
+}
+input#last-name:focus:valid + span::after {
+  position: absolute;
+  content: "✓";
+  left: 710px;
+  color: #3dce00;
+}
+input#mail:focus:invalid {
+  outline: 2px solid #FF0000;
+}
+input#mail:focus:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  right: 690px;
+  color: #FF0000;
+}
+input#mail:focus:valid + span::after {
+  position: absolute;
+  content: "✓";
+  right: 690px;
+  color: #3dce00;
+}
+input#telNum:focus {
+  outline: 2px solid #fca311;
+}
+input#telNum:focus:invalid {
+  outline: 2px solid #FF0000;
+}
+input#telNum:focus:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  left: 710px;
+  color: #FF0000;
+}
+input#telNum:focus:valid + span::after {
+  position: absolute;
+  content: "✓";
+  left: 710px;
+  color: #3dce00;
 }
 
 /*# sourceMappingURL=styles.css.map */

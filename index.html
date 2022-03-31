@@ -18,12 +18,14 @@
                 <img src="./imgs/nathan-dumlao-zUNs99PGDg0-unsplash.jpg" alt="Three beautiful cups of coffee!" id="coffee-img">
             </section>
             <div class="container-1">
-                <p>This is not a real online service! I am just an avid enjoyer of coffee, so I tend to make alot of my projects coffee-related!
-                    Go ahead and test out this sign-up form!
-                </p>
-                <p>
-                    Please, go on and test!
-                </p>
+                <div class="head-text">
+                    <p>This is not a real online service! I am just an avid enjoyer of coffee, so I tend to make alot of my projects coffee-related!
+                        Go ahead and test out this sign-up form!
+                    </p>
+                    <p>
+                        Please, go on and test!
+                    </p>
+                </div>
                 <div class="container-2">
                     <form method="post">
                         <caption>Get Started!</caption>
@@ -33,12 +35,14 @@
                                     <label for="first-name">
                                         <p>First Name</p>
                                         <input type="text" name="fName" id="first-name" required placeholder="John">
+                                        <span class="validation"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label for="last-name">
                                         <p>Last Name</p>
                                         <input type="text" name="lName" id="last-name" required placeholder="Doe">
+                                        <span class="validation"></span>
                                     </label>
                                 </li>
                             </ul>
@@ -50,12 +54,14 @@
                                     <label for="mail">
                                         <p>Email Address</p>
                                         <input type="email" name="email" id="mail" required placeholder="johndoe123@youremail.com">
+                                        <span class="validation"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label for="telNum">
                                         <p>Phone Number</p>
-                                        <input type="tel" name="phoneNum" id="telNum" placeholder="Optional">
+                                        <input type="tel" name="phoneNum" id="telNum" placeholder="Optional: 123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                                        <span class="validation"></span>
                                     </label>
                                 </li>
                             </ul>
