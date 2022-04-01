@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Sign-Up Form</title>
     <link rel="stylesheet" href="./stylesheets/styles.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
     <body>
         <div class="main-container">
@@ -27,7 +27,7 @@
                     </p>
                 </div>
                 <div class="container-2">
-                    <form method="post">
+                    <form method="post" id="main-form">
                         <caption>Get Started!</caption>
                         <div class="names">
                             <ul id="names-list">
@@ -73,12 +73,15 @@
                                     <label for="password">
                                         <p>Password</p>
                                     <input type="password" name="pWord" id="password" required>
+                                    <span id="error-msg"></span>
+                                    <span class="validation"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label for="confirm-password">
                                         <p>Confirm Password</p>
                                         <input type="password" name="pWord" id="confirm-password" required>
+                                        <span class="validation"></span>
                                     </label>
                                 </li>
                             </ul>

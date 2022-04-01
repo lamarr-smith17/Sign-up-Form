@@ -127,7 +127,7 @@ input#first-name:focus:invalid + span::after {
   right: 690px;
   color: #FF0000;
 }
-input#first-name:focus:valid + span::after {
+input#first-name:valid + span::after {
   position: absolute;
   content: "✓";
   right: 690px;
@@ -139,7 +139,7 @@ input#last-name:focus:invalid + span::after {
   left: 710px;
   color: #FF0000;
 }
-input#last-name:focus:valid + span::after {
+input#last-name:valid + span::after {
   position: absolute;
   content: "✓";
   left: 710px;
@@ -154,7 +154,7 @@ input#mail:focus:invalid + span::after {
   right: 690px;
   color: #FF0000;
 }
-input#mail:focus:valid + span::after {
+input#mail:valid + span::after {
   position: absolute;
   content: "✓";
   right: 690px;
@@ -172,11 +172,26 @@ input#telNum:focus:invalid + span::after {
   left: 710px;
   color: #FF0000;
 }
-input#telNum:focus:valid + span::after {
+input#telNum:valid + span::after {
   position: absolute;
   content: "✓";
   left: 710px;
   color: #3dce00;
+}
+input#password:focus:invalid {
+  outline: 2px solid #FF0000;
+}
+input#password:focus:invalid + span::after {
+  position: absolute;
+  content: "✖";
+  right: 690px;
+  color: #FF0000;
+}
+input#password:valid + span > .validation::after {
+  position: absolute;
+  content: "✖";
+  right: 690px;
+  color: #FF0000;
 }
 
 /*# sourceMappingURL=styles.css.map */

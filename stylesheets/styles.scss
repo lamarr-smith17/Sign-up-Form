@@ -170,7 +170,7 @@ input {
         &:focus:invalid+span::after{
             @include inputInvalidAfterLeft();
         }
-        &:focus:valid+span::after{
+        &:valid+span::after{
             @include inputValidAfterLeft();
         }
     }
@@ -178,7 +178,7 @@ input {
         &:focus:invalid+span::after{
             @include inputInvalidAfterRight();
         }
-        &:focus:valid+span::after{
+        &:valid+span::after{
             @include inputValidAfterRight();
         }
     }
@@ -189,7 +189,7 @@ input {
         &:focus:invalid+span::after{
             @include inputInvalidAfterLeft();
         }
-        &:focus:valid+span::after {
+        &:valid+span::after {
             @include inputValidAfterLeft();
         }
     }
@@ -203,8 +203,19 @@ input {
         &:focus:invalid+span::after{
             @include inputInvalidAfterRight();
         }
-        &:focus:valid+span::after {
+        &:valid+span::after {
             @include inputValidAfterRight();
+        }
+    }
+    &#password{
+        &:focus:invalid{
+            @include inputInvalid();
+        }
+        &:focus:invalid+span::after{
+            @include inputInvalidAfterLeft();
+        }
+        &:valid+span>.validation::after{
+            @include inputInvalidAfterLeft()
         }
     }
     
