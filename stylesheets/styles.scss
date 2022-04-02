@@ -2,9 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', sans-serif, serif;
+    font-family: 'BIZ Mincho', sans-serif, serif;
 }
-
+@font-face {
+    font-family: 'BIZ Mincho';
+    src: url(/sign-up-form/fonts/BIZUDPMincho-Regular.ttf);
+}
 @mixin uLFlex {
     display: flex;
     gap: 100px;
@@ -47,6 +50,12 @@
     left: 710px;
     color: #3dce00;
 }
+@mixin spanBlock {
+    display: block;
+    width: 250px;
+    overflow: auto;
+    font-size: .75em;
+}
 body {
     height: 100vh;
     overflow: hidden;
@@ -86,7 +95,7 @@ ul {
     &#email-num {
         @include uLFlex();
     }
-    &#password-id {
+    &.password-list {
         @include uLFlex();
     }
 }
@@ -115,7 +124,7 @@ div {
     &.container-2{
         background-color: #f8edeb;
         font-size: 1.5rem;
-        height: 60%;
+        height: 65%;
     }
     &.coffee-bar{
         background-color: rgba(0,0,0, 0.2);
@@ -128,8 +137,12 @@ div {
         align-items: center;
     }
     &.coffee-bar > p {
+        font-family: 'BIZ Mincho', sans-serif, serif;
         color: #FFFFFF;
         font-size: 2rem;
+    }
+    .password-container{
+        @include uLFlex();
     }
     &.make-acc {
         top: 20px;
@@ -141,9 +154,15 @@ div {
 button {
     &#join-btn{
         @include buttonBorder();
-        width: 250px;
+        width: 300px;
         height: fit-content;
         font-size: 2rem;
+        background-color: #FEFAE0;
+        transition: .2s;
+        &:hover{
+            background-color: #F3E5AB;
+            transition: .2s;
+        }
     }
 
 }
@@ -211,12 +230,38 @@ input {
         &:focus:invalid{
             @include inputInvalid();
         }
-        &:focus:invalid+span::after{
-            @include inputInvalidAfterLeft();
-        }
-        &:valid+span>.validation::after{
+    }
+    &#password.success{
+        &:invalid:focus+span::after{
             @include inputInvalidAfterLeft()
         }
+        &:valid+span::after{
+           @include inputValidAfterLeft();
+        }
+        
     }
-    
+    &#password.error{
+        &:invalid{
+            @include inputInvalid();
+        }
+    }
+}
+
+span {
+    &#error-msg {
+        @include spanBlock();
+    }
+    &#error-msg2{
+        @include spanBlock();
+    }
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: .2s;
+    &:hover{
+        color: #CD533B;
+        transition: .2s;
+    }
 }

@@ -3,9 +3,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Times New Roman", sans-serif, serif;
+  font-family: "BIZ Mincho", sans-serif, serif;
 }
 
+@font-face {
+  font-family: "BIZ Mincho";
+  src: url(/sign-up-form/fonts/BIZUDPMincho-Regular.ttf);
+}
 body {
   height: 100vh;
   overflow: hidden;
@@ -45,7 +49,7 @@ ul#email-num {
   display: flex;
   gap: 100px;
 }
-ul#password-id {
+ul.password-list {
   display: flex;
   gap: 100px;
 }
@@ -74,7 +78,7 @@ div.head-text {
 div.container-2 {
   background-color: #f8edeb;
   font-size: 1.5rem;
-  height: 60%;
+  height: 65%;
 }
 div.coffee-bar {
   background-color: rgba(0, 0, 0, 0.2);
@@ -87,8 +91,13 @@ div.coffee-bar {
   align-items: center;
 }
 div.coffee-bar > p {
+  font-family: "BIZ Mincho", sans-serif, serif;
   color: #FFFFFF;
   font-size: 2rem;
+}
+div .password-container {
+  display: flex;
+  gap: 100px;
 }
 div.make-acc {
   top: 20px;
@@ -101,9 +110,15 @@ div.returning-customer {
 button#join-btn {
   border: 1px solid #C0C0C0;
   border-radius: 30px;
-  width: 250px;
+  width: 300px;
   height: fit-content;
   font-size: 2rem;
+  background-color: #FEFAE0;
+  transition: 0.2s;
+}
+button#join-btn:hover {
+  background-color: #F3E5AB;
+  transition: 0.2s;
 }
 
 img#coffee-img {
@@ -181,17 +196,43 @@ input#telNum:valid + span::after {
 input#password:focus:invalid {
   outline: 2px solid #FF0000;
 }
-input#password:focus:invalid + span::after {
+input#password.success:invalid:focus + span::after {
   position: absolute;
   content: "✖";
   right: 690px;
   color: #FF0000;
 }
-input#password:valid + span > .validation::after {
+input#password.success:valid + span::after {
   position: absolute;
-  content: "✖";
+  content: "✓";
   right: 690px;
-  color: #FF0000;
+  color: #3dce00;
+}
+input#password.error:invalid {
+  outline: 2px solid #FF0000;
+}
+
+span#error-msg {
+  display: block;
+  width: 250px;
+  overflow: auto;
+  font-size: 0.75em;
+}
+span#error-msg2 {
+  display: block;
+  width: 250px;
+  overflow: auto;
+  font-size: 0.75em;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.2s;
+}
+a:hover {
+  color: #CD533B;
+  transition: 0.2s;
 }
 
 /*# sourceMappingURL=styles.css.map */
